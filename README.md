@@ -50,66 +50,83 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 
 ```json
 {
-    "properties": {
-      "email": {
-        "type": "string",
-        "description": "email",
-        "format": "email"
-      },
-      "password": {
-        "type": "string",
-        "description": "Password"
-      },
-      "rememberMe": {
-        "type": "boolean",
-        "default": false,
-        "description": "Remember me"
-      },
-        "operatingSystem": {
-          "type": "string",
-          "oneOf": [
-            {
-              "enum": [
-                "linux"
-              ],
-              "description": "GNU/Linux"
-            },
-            {
-              "enum": [
-                "osx"
-              ],
-              "description": "OSX"
-            },
-            {
-              "enum": [
-                "windows"
-              ],
-              "description": "Windows"
-            },
-            {
-              "enum": [
-                "other"
-              ],
-              "description": "Other"
-            }
-          ],
-          "default": "other"
-        }
+  "title": "Otherschema",
+  "fieldsets": [
+    {
+      "fields": [
+        "title",
+        "description"
+      ],
+      "id": "default",
+      "title": "Default"
     },
-    "required": ["email","password","rememberMe"],
-     "buttons": [
-           {
-             "id": "reset",
-             "label": "Reset"
-           },
-           {
-             "id": "custom_b",
-             "label": "My custom button",
-             "widget": "my_custom_button" 
-           }
-         ]
+    {
+      "fields": [
+        "author",
+        "language"
+      ],
+      "id": "settings",
+      "title": "Settings"
+    }
+  ],
+  "properties": {
+    "description": {
+      "description": "Short description",
+      "minLength": 0,
+      "title": "Summary",
+      "type": "string",
+      "widget": {
+        "id": "textarea"
+      }
+    },
+    "title": {
+      "description": "",
+      "title": "Title",
+      "type": "string",
+      "widget": {
+        "id": "string"
+      }
+    },
+    "author": {
+      "description": "",
+      "title": "Author",
+      "type": "string",
+      "widget": {
+        "id": "string"
+      }
+    },
+    "language": {
+      "description": "",
+      "oneOf": [
+        {
+          "enum": [
+            "es"
+          ],
+          "description": "Spanish"
+        },
+        {
+          "enum": [
+            "fr"
+          ],
+          "description": "French"
+        }
+      ],
+      "title": "Language",
+      "type": "string",
+      "widget": {
+        "id": "select"
+      }
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "type": "object",
+  "widget": {
+    "id": "object"
   }
 }
+
 ```
 
 

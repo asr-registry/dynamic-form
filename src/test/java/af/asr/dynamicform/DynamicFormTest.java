@@ -31,64 +31,80 @@ public class DynamicFormTest {
 	private DynamicFormRepository repository;
 
 	private  final static  String SCHEMA = "{\n" +
-			"    \"properties\": {\n" +
-			"      \"email\": {\n" +
-			"        \"type\": \"string\",\n" +
-			"        \"description\": \"email\",\n" +
-			"        \"format\": \"email\"\n" +
-			"      },\n" +
-			"      \"password\": {\n" +
-			"        \"type\": \"string\",\n" +
-			"        \"description\": \"Password\"\n" +
-			"      },\n" +
-			"      \"rememberMe\": {\n" +
-			"        \"type\": \"boolean\",\n" +
-			"        \"default\": false,\n" +
-			"        \"description\": \"Remember me\"\n" +
-			"      },\n" +
-			"        \"operatingSystem\": {\n" +
-			"          \"type\": \"string\",\n" +
-			"          \"oneOf\": [\n" +
-			"            {\n" +
-			"              \"enum\": [\n" +
-			"                \"linux\"\n" +
-			"              ],\n" +
-			"              \"description\": \"GNU/Linux\"\n" +
-			"            },\n" +
-			"            {\n" +
-			"              \"enum\": [\n" +
-			"                \"osx\"\n" +
-			"              ],\n" +
-			"              \"description\": \"OSX\"\n" +
-			"            },\n" +
-			"            {\n" +
-			"              \"enum\": [\n" +
-			"                \"windows\"\n" +
-			"              ],\n" +
-			"              \"description\": \"Windows\"\n" +
-			"            },\n" +
-			"            {\n" +
-			"              \"enum\": [\n" +
-			"                \"other\"\n" +
-			"              ],\n" +
-			"              \"description\": \"Other\"\n" +
-			"            }\n" +
-			"          ],\n" +
-			"          \"default\": \"other\"\n" +
-			"        }\n" +
+			"  \"title\": \"Otherschema\",\n" +
+			"  \"fieldsets\": [\n" +
+			"    {\n" +
+			"      \"fields\": [\n" +
+			"        \"title\",\n" +
+			"        \"description\"\n" +
+			"      ],\n" +
+			"      \"id\": \"default\",\n" +
+			"      \"title\": \"Default\"\n" +
 			"    },\n" +
-			"    \"required\": [\"email\",\"password\",\"rememberMe\"],\n" +
-			"     \"buttons\": [\n" +
-			"           {\n" +
-			"             \"id\": \"reset\",\n" +
-			"             \"label\": \"Reset\"\n" +
-			"           },\n" +
-			"           {\n" +
-			"             \"id\": \"custom_b\",\n" +
-			"             \"label\": \"My custom button\",\n" +
-			"             \"widget\": \"my_custom_button\" \n" +
-			"           }\n" +
-			"         ]\n" +
+			"    {\n" +
+			"      \"fields\": [\n" +
+			"        \"author\",\n" +
+			"        \"language\"\n" +
+			"      ],\n" +
+			"      \"id\": \"settings\",\n" +
+			"      \"title\": \"Settings\"\n" +
+			"    }\n" +
+			"  ],\n" +
+			"  \"properties\": {\n" +
+			"    \"description\": {\n" +
+			"      \"description\": \"Short description\",\n" +
+			"      \"minLength\": 0,\n" +
+			"      \"title\": \"Summary\",\n" +
+			"      \"type\": \"string\",\n" +
+			"      \"widget\": {\n" +
+			"        \"id\": \"textarea\"\n" +
+			"      }\n" +
+			"    },\n" +
+			"    \"title\": {\n" +
+			"      \"description\": \"\",\n" +
+			"      \"title\": \"Title\",\n" +
+			"      \"type\": \"string\",\n" +
+			"      \"widget\": {\n" +
+			"        \"id\": \"string\"\n" +
+			"      }\n" +
+			"    },\n" +
+			"    \"author\": {\n" +
+			"      \"description\": \"\",\n" +
+			"      \"title\": \"Author\",\n" +
+			"      \"type\": \"string\",\n" +
+			"      \"widget\": {\n" +
+			"        \"id\": \"string\"\n" +
+			"      }\n" +
+			"    },\n" +
+			"    \"language\": {\n" +
+			"      \"description\": \"\",\n" +
+			"      \"oneOf\": [\n" +
+			"        {\n" +
+			"          \"enum\": [\n" +
+			"            \"es\"\n" +
+			"          ],\n" +
+			"          \"description\": \"Spanish\"\n" +
+			"        },\n" +
+			"        {\n" +
+			"          \"enum\": [\n" +
+			"            \"fr\"\n" +
+			"          ],\n" +
+			"          \"description\": \"French\"\n" +
+			"        }\n" +
+			"      ],\n" +
+			"      \"title\": \"Language\",\n" +
+			"      \"type\": \"string\",\n" +
+			"      \"widget\": {\n" +
+			"        \"id\": \"select\"\n" +
+			"      }\n" +
+			"    }\n" +
+			"  },\n" +
+			"  \"required\": [\n" +
+			"    \"title\"\n" +
+			"  ],\n" +
+			"  \"type\": \"object\",\n" +
+			"  \"widget\": {\n" +
+			"    \"id\": \"object\"\n" +
 			"  }\n" +
 			"}";
 
