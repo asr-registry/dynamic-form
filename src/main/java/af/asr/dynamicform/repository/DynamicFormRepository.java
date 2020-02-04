@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DynamicFormRepository extends JpaRepository<DynamicForm, Long> {
+
+    DynamicForm findByName(String name);
+    DynamicForm findByType(String type);
 }
