@@ -1,7 +1,9 @@
 package af.asr.dynamicform.model;
 
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
@@ -14,10 +16,10 @@ import java.util.Map;
 @Builder
 @Getter
 @Setter
-//@TypeDef(
-//        name = "jsonb",
-//        typeClass = JsonBinaryType.class
-//)
+@TypeDef(
+        name = "jsonb",
+        typeClass = JsonBinaryType.class
+)
 public class DynamicForm {
 
     @Id
@@ -25,13 +27,13 @@ public class DynamicForm {
     private Long id;
 
     @Column(name = "name", unique = true)
-    @NaturalId
     private String name;
 
     @Column(name = "type", unique = true)
     private String type;
 
-    @Column(name = "type", unique = true)
+//    @Type(type = "jsonb")
+//    @Column(columnDefinition = "jsonb", name = "schema")
     private String schema;
 
 }
