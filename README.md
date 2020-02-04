@@ -1,6 +1,34 @@
 ### Dynamic HTML Form Management and HTML Generation based on JSON schema
 
 
+#### Guide
+
+```java
+
+```
+
+add following dependencies into `application.properties`
+
+```properties
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring.datasource.url=jdbc:postgresql://localhost:5432/test
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.username= 
+spring.datasource.password= 
+
+## serialization of lazyloaded relationship causes to error when objects not loaded
+spring.jackson.serialization.fail-on-empty-beans=false
+
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQL82Dialect
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+
+```
 #### Features
 
 - Generate a form from a single json schema object
