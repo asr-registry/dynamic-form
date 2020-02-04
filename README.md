@@ -1,4 +1,4 @@
-### Dynamic HTML Form Management and HTML Generation based on JSON schema
+### Dynamic HTML Form Management for HTML Generation based on JSON schema
 
 
 #### Guide
