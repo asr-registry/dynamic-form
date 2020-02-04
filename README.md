@@ -3,11 +3,17 @@
 
 #### Guide
 
-```java
+```xml
+
+		<dependency>
+                       <groupId>af.asr</groupId>
+                        <artifactId>dynamic-form</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 ```
 
-add following dependencies into `application.properties`
+add following properties dependencies to your `application.properties`
 
 ```properties
 ## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
